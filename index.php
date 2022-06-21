@@ -78,8 +78,8 @@
                             </div>
                         </div>
 					   <div class="col-12 m-b-30">
-							<h4 class="d-inline">Cards With Images</h4>
-							<p class="text-muted">This is 3 column contents</p>
+							<h4 class="d-inline">Upcoming Trip</h4>
+							<p class="text-muted">Get your ticket now!</p>
 							<div class="row">
 								<div class="col-md-6 col-lg-3">
 									<div class="card">
