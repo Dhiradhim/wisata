@@ -1,0 +1,53 @@
+<?php  
+session_start();  
+if(!$_SESSION['id_user'])
+{  
+  
+    header("Location: login.php");//redirect to login page to secure the welcome page without login access.  
+} 
+else {
+include('koneksi.php');
+$id_user=$_SESSION['id_user'];
+$query_user = mysqli_query($con, "SELECT * FROM login WHERE id_user='$id_user'") or die(mysqli_connect_error());
+$row_user = mysqli_fetch_assoc($query_user);
+$xrow_user = mysqli_num_rows($query_user);
+}
+  
+?> 
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function(){
+    $("a.delete").click(function(e){
+        if(!confirm('Anda yakin ingin menghapus data ini?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    });
+});
+
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Wisata</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- Daterange picker plugins css -->
+    <link href="./plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="./plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">   
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
