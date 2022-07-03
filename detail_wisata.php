@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 <center>
                                     <h4>Harga</h4>
-                                    <h3>Rp. <?=$row['price']?>,- / orang</h3><br>
+                                    <h3>Rp. <?php $price=$row['price']; echo number_format($price, 2, ',', '.');?> / orang</h3><br>
                                     <h4>Kuota</h4>
                                     <h3><?=$kuota_total?> / <?=$row['kuota']?></h3>
                                 </center>
@@ -142,7 +142,7 @@
                                             <div class="p-t-15">
                                                 <h4><?=$row['nama_wisata'];?></h4><br>
                                                 <p>Tanggal Keberangkatan : <?=$row['date1'];?></p>
-                                                <p>Harga per paket : Rp. <?=$row['price'];?>,-</p>
+                                                <p>Harga per paket : Rp. <?php $price=$row['price']; echo number_format($price, 2, ',', '.');?></p>
                                                 <p><?=$row['deskripsi'];?></p>
                                             </div>
                                         </div>
@@ -175,10 +175,15 @@
         {
             var price = document.getElementById('price').value;
             var kuota = document.getElementById('kuota').value; 
-            var str1 = "Rp. ";
-            var str2 = ",-";
             var total = parseInt(price)*parseInt(kuota);
-            document.getElementById('total').value = str1 + total + str2;
+            var str1 = "Rp.";
+            var str2 = ",00";
+
+            var	reverse = total.toString().split('').reverse().join(''),
+                ribuan 	= reverse.match(/\d{1,3}/g);
+                ribuan	= ribuan.join('.').split('').reverse().join('');
+
+            document.getElementById('total').value = str1 + ribuan + str2;
         }
     </script>
 

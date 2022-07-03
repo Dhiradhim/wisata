@@ -71,7 +71,7 @@
                                                     <td><div align="center"><?php echo $row['kode_booking']; ?></div></td>
                                                     <td><div align="center"><?php echo $row['nama_wisata']; ?></div></td>
                                                     <td><div align="center"><?php echo $row['date1']; ?></div></td>
-                                                    <td><div align="center"><?php echo $row['price']; ?></div></td>
+                                                    <td><div align="center">Rp. <?php $price=$row['price']; echo number_format($price, 2, ',', '.');?></div></td>
                                                     <td><div align="center"><?php echo $row['kuota']; ?></div></td>
                                                     <td><div align="center">
                                                         <?php
@@ -114,6 +114,7 @@
                                                             if ($row['status']==3)
                                                             {                                                            
                                                         ?>
+                                                            <a href="print.php?kode_booking=<?=$row['kode_booking'];?>" target="_blank"><button class="btn btn-primary">CETAK</button></a>
                                                             <button class="btn btn-success">SUDAH DIBAYAR</button>
                                                         <?php
                                                             }

@@ -69,7 +69,7 @@
                                                     <td><div align="center"><?php echo $count; ?></div></td>
                                                     <td><div align="center"><?php echo $row['nama_wisata']; ?></div></td>
                                                     <td><div align="center"><?php echo $row['date']; ?></div></td>
-                                                    <td><div align="center"><?php echo $row['price']; ?></div></td>
+                                                    <td><div align="center">Rp. <?php $price=$row['price']; echo number_format($price, 2, ',', '.');?></div></td>
                                                     <td><div align="center"><?php echo $row['kuota']; ?></div></td>
                                                     <td><div align="center">
                                                     <a href="trip_edit.php?id_trip=<?=$row['id_trip']?>" title="Edit"><img src="images/edit.png" width="20" height="20" /></a>  

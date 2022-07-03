@@ -55,7 +55,7 @@
                                             </div>
 										<?php
                                             include("koneksi.php");
-                                            $query = mysqli_query($con, "SELECT * FROM trip ORDER BY id_trip desc LIMIT 5") or die(mysqli_connect_error());
+                                            $query = mysqli_query($con, "SELECT * FROM trip WHERE date >= CURDATE() ORDER BY id_trip desc LIMIT 5") or die(mysqli_connect_error());
                                             $row = mysqli_fetch_assoc($query);
                                             $count = 1;
                                             
@@ -80,7 +80,7 @@
 							<div class="row">
 							<?php
 								include("koneksi.php");
-								$query1 = mysqli_query($con, "SELECT id_trip, foto, nama_wisata, deskripsi, DATE_FORMAT(date, '%D %M %Y') as date1 FROM trip ORDER BY id_trip desc") or die(mysqli_connect_error());
+								$query1 = mysqli_query($con, "SELECT id_trip, foto, nama_wisata, deskripsi, DATE_FORMAT(date, '%D %M %Y') as date1 FROM trip WHERE date >= CURDATE() ORDER BY id_trip desc") or die(mysqli_connect_error());
 								$row1 = mysqli_fetch_assoc($query1);
 								$count = 1;
 											
@@ -90,9 +90,10 @@
 									<div class="card">
 										<img src="<?=$row1['foto'];?>" style="height:150px; object-fit: cover;">
 										<div class="card-body">
-											<h5 class="card-title"><a href="detail_wisata.php?id_trip=<?=$row1['id_trip'];?>"><?=$row1['nama_wisata'];?></a></h5>
+											<h5 class="card-title"><?=$row1['nama_wisata'];?></h5>
 											<p class="card-text"><?=$row1['deskripsi'];?></p>
-											<p class="card-text"><small class="text-muted"><?=$row1['date1'];?></small>
+											<p class="card-text"><small class="text-muted"><?=$row1['date1'];?></small><br><br>
+                                            <a href="detail_wisata.php?id_trip=<?=$row1['id_trip'];?>"><button class="btn btn-primary">Pesan</button></a>
 											</p>
 										</div>
 									</div>
