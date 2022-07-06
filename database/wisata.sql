@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 11:56 AM
+-- Generation Time: Jul 03, 2022 at 09:52 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -53,7 +53,8 @@ INSERT INTO `login` (`id_user`, `nama`, `username`, `password`, `email`, `no_tel
 --
 
 CREATE TABLE `pembelian` (
-  `kode_booking` int(10) NOT NULL,
+  `kode_booking` varchar(20) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
   `id_trip` int(10) NOT NULL,
   `id_user` int(10) NOT NULL,
   `price` int(10) NOT NULL,
@@ -66,8 +67,8 @@ CREATE TABLE `pembelian` (
 -- Dumping data for table `pembelian`
 --
 
-INSERT INTO `pembelian` (`kode_booking`, `id_trip`, `id_user`, `price`, `kuota`, `status`, `bukti_transfer`) VALUES
-(4, 2, 5, 4000000, 5, '3', 'images/bukti_transfer/4_bukti_transfer.jpg');
+INSERT INTO `pembelian` (`kode_booking`, `date`, `id_trip`, `id_user`, `price`, `kuota`, `status`, `bukti_transfer`) VALUES
+('1/03/07/2022', '2022-07-03', 2, 5, 4000000, 5, '3', 'images/bukti_transfer/4_bukti_transfer.jpg');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,7 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`id_trip`, `nama_wisata`, `price`, `deskripsi`, `detail`, `itinerary`, `date`, `kuota`, `foto`) VALUES
-(2, 'Raja Ampat', 800000, 'Raja Ampat Deskripsi', 'Raja Ampat Detail', 'Raja Ampat Itinerary', '2022-06-29', 50, 'images/foto/Raja Ampat_foto.jpg');
+(2, 'Raja Ampat', 800000, 'Raja Ampat Deskripsi', 'Raja Ampat Detail', 'Raja Ampat Itinerary', '2022-07-21', 50, 'images/foto/Raja Ampat_foto.jpg');
 
 --
 -- Indexes for dumped tables
@@ -125,12 +126,6 @@ ALTER TABLE `trip`
 --
 ALTER TABLE `login`
   MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `pembelian`
---
-ALTER TABLE `pembelian`
-  MODIFY `kode_booking` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `trip`

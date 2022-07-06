@@ -3,7 +3,7 @@ session_start();
 if(!$_SESSION['id_user'])
 {  
   
-    header("Location: login.php");//redirect to login page to secure the welcome page without login access.  
+    header("Location: wisata-guest.php");//redirect to login page to secure the welcome page without login access.  
 } 
 else {
 include('koneksi.php');

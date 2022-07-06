@@ -73,7 +73,7 @@
                                                     <td><div align="center"><?php echo $row['nama']; ?></div></td>
                                                     <td><div align="center"><?php echo $row['nama_wisata']; ?></div></td>
                                                     <td><div align="center"><?php echo $row['date1']; ?></div></td>
-                                                    <td><div align="center"><?php echo $row['price']; ?></div></td>
+                                                    <td><div align="center">Rp. <?php $price=$row['price1']; echo number_format($price, 2, ',', '.');?></div></td>
                                                     <td><div align="center"><?php echo $row['kuota']; ?></div></td>
                                                     <td><div align="center">
                                                         <?php
