@@ -165,31 +165,8 @@
 											<h5 class="card-title"><?=$row1['nama_wisata'];?></h5>
 											<p class="card-text"><?=$row1['deskripsi'];?></p>
 											<p class="card-text"><small class="text-muted"><?=$row1['date1'];?></small><br><br>
-                                            <div class="bootstrap-modal">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Pesan</button>
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Silahkan Login</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <form method="post">
-                                                                    <div class="modal-body">
-                                                                        <div class="form-group">
-                                                                            <label for="recipient-name" class="col-form-label">Anda belum Login, silahkan Login terlebih dahulu!</label>
-                                                                        </div>   
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                                        <a href="login.php"><button type="button" class="btn btn-primary">Login</button></a>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            </div>
+                                            <a href="detail_wisata_guest.php?id_trip=<?=$row1['id_trip'];?>"><button class="btn btn-primary">Detail</button></a>
+                                                                
 											</p>
 										</div>
 									</div>
