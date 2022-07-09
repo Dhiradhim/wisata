@@ -89,20 +89,23 @@
                                                                                 </button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <form method="post" action="upload_bukti_bayar.php" enctype="multipart/form-data">
-                                                                                    <div class="form-group">
-                                                                                        <input type="file" class="form-control-file" id="bukti_transfer" name=bukti_transfer>
-                                                                                        <input type="hidden" class="form-control-file" id="kode_booking" name=kode_booking value=<?=$row['kode_booking']?>>
-                                                                                    </div>
-                                                                                    <div class="modal-footer">
-                                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                                                                        <button type="submit" class="btn btn-primary">Upload</button>
-                                                                                    </div>
-                                                                                </form>
+                                                                                <div class="form-group">
+                                                                                    <label for="recipient-name" >Silahkan transfer ke rekening berikut:<br>Bank : BCA<br>No Rekening : 0840695107<br>Atas Nama : Emil<br><br>Setelah transfer silahkan upload bukti transfer anda.</label>
+                                                                                </div>
+                                                                                    <form method="post" action="upload_bukti_bayar.php" enctype="multipart/form-data">
+                                                                                        <div class="form-group">
+                                                                                            <input type="file" class="form-control-file" id="bukti_transfer" name=bukti_transfer>
+                                                                                            <input type="hidden" class="form-control-file" id="kode_booking" name=kode_booking value=<?=$row['kode_booking']?>>
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                                                            <button type="submit" class="btn btn-primary">Upload</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
                                                         <?php
                                                             }
                                                             if ($row['status']==2)
